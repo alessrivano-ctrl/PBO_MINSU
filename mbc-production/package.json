@@ -1,0 +1,24 @@
+{
+  "name": "mbc-production",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alessrivano-ctrl/bpo-systemUp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/alessrivano-ctrl/bpo-systemUp/issues"
+  },
+  "homepage": "https://github.com/alessrivano-ctrl/bpo-systemUp#readme",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

@@ -1,0 +1,175 @@
+#receipt-print-root {
+    display: none;
+}
+
+.receipt-modal-actions {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid #e7f1e8;
+    background: #fff;
+    padding: 1rem 1.25rem;
+}
+
+.receipt-modal-actions .btn,
+.receipt-modal-actions button {
+    min-height: 2.75rem;
+    border-radius: 0.5rem;
+    padding: 0.625rem 1.125rem;
+}
+
+.receipt-modal-actions .receipt-void-btn {
+    border-color: #d6a51f;
+    box-shadow: inset 0 0 0 1px #e5b83e;
+    color: #0b2f1a;
+}
+
+.receipt-modal-actions .receipt-void-btn:hover {
+    background: #fff8e1;
+    color: #0b2f1a;
+}
+
+#close-receipt-btn,
+#cancel-void-request-btn {
+    border-color: #14532d;
+    background: #fff;
+    color: #0b2f1a;
+}
+
+#close-receipt-btn:hover,
+#cancel-void-request-btn:hover {
+    background: #f7f9f6;
+}
+
+#print-receipt-btn {
+    min-width: 7.5rem;
+    background: #14532d;
+    color: #fff;
+}
+
+#print-receipt-btn:hover {
+    background: #0b2f1a;
+}
+
+#void-request-modal {
+    max-width: 32rem;
+}
+
+.void-request-form {
+    padding: 1.25rem;
+}
+
+.void-request-summary {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    gap: 0.25rem 0.75rem;
+    border: 1px solid #e7f1e8;
+    border-radius: 0.5rem;
+    background: #f7f9f6;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.void-request-summary span {
+    font-weight: 700;
+    color: #475569;
+}
+
+.void-request-summary strong {
+    color: #0b2f1a;
+}
+
+.void-request-form textarea {
+    min-height: 6rem;
+}
+
+@media (min-width: 640px) {
+    .receipt-modal-actions {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .receipt-modal-actions .receipt-void-btn {
+        margin-right: auto;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    html.printing-receipt,
+    html.printing-receipt body {
+        min-height: 0 !important;
+        height: auto !important;
+        overflow: visible !important;
+        background: #fff !important;
+        color: #111 !important;
+    }
+
+    html.printing-receipt body {
+        margin: 0 !important;
+    }
+
+    html.printing-receipt body > *:not(#receipt-print-root) {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    html.printing-receipt #receipt-print-root,
+    html.printing-receipt #receipt-print-root * {
+        visibility: visible !important;
+    }
+
+    html.printing-receipt #receipt-print-root {
+        display: block !important;
+        width: 100% !important;
+        max-width: 760px !important;
+        margin: 0 auto !important;
+    }
+
+    html.printing-receipt #receipt-print-root .receipt-print {
+        display: block !important;
+        background: #fff !important;
+        color: #111 !important;
+        padding: 0 !important;
+    }
+
+    html.printing-receipt #receipt-print-root .receipt-paper {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+        border: 1px solid #222 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        padding: 14px !important;
+    }
+
+    html.printing-receipt #receipt-print-root table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 11px !important;
+    }
+
+    html.printing-receipt #receipt-print-root th,
+    html.printing-receipt #receipt-print-root td {
+        border: 1px solid #222 !important;
+        color: #111 !important;
+        padding: 6px !important;
+    }
+
+    html.printing-receipt #receipt-print-root .receipt-brand,
+    html.printing-receipt #receipt-print-root .receipt-footer-note {
+        border-color: #222 !important;
+        color: #111 !important;
+    }
+
+    html.printing-receipt #receipt-print-root .receipt-status {
+        border: 1px solid #222 !important;
+        background: #fff !important;
+        color: #111 !important;
+    }
+}
